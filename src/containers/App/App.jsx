@@ -1,4 +1,5 @@
 import PeoplePage from '../PeoplePage/PeoplePage';
+
 import style from './App.module.css';
 
 
