@@ -14,13 +14,18 @@
 
   --font-size: 16px;
   --width-max: 1200px;
-  
+
   --font-bold: 600;
   --transition: .4s;
   --font-family-main: sans-serif;
   --font-size-header: 26px;
+  --font-size-subheader: 18px;
 
   --text-shadow-yellow:
+    0 0 2px var(--color-white),
+    0 0 40px var(--color-yellow);
+
+  --text-shadow-blue:
     0 0 2px var(--color-white),
     0 0 40px var(--color-blue);
 
