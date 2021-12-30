@@ -47,7 +47,7 @@ const PeoplePage = ({ setErrorApi }) => {
       setPeople(peopleList);
       setPrevPage(changeHTTP(res.previous));
       setNextPage(changeHTTP(res.next));
-      setCounterPage(getPeopleImage(url));
+      setCounterPage(getPeoplePageId(url));
       setErrorApi(false);
     } else {
       setErrorApi(true);

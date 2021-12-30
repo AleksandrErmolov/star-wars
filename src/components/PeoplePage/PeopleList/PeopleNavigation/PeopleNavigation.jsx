@@ -21,7 +21,7 @@ export default function PeopleNavigation({
     <div>
       <Link to={`/people/?page=${counterPage - 1}`} className={styles.link}>
         <button
-          onclick={handleChangePrev}
+          onClick={handleChangePrev}
           className={styles.buttons}
           disabled={!prevPage}
         >
@@ -31,7 +31,7 @@ export default function PeopleNavigation({
 
       <Link to={`/people/?page=${counterPage + 1}`} className={styles.link}>
         <button
-          onclick={handleChangeNext}
+          onClick={handleChangeNext}
           className={styles.buttons}
           disabled={!nextPage}
         >
