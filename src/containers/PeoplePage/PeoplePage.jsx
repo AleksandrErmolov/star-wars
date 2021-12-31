@@ -24,10 +24,6 @@ const PeoplePage = ({ setErrorApi }) => {
   const query = useQueryParams();
   const queryPage = query.get("page");
 
-  console.log("query", query);
-  console.log("queryPage", queryPage);
-  console.log("prevPage", prevPage);
-  console.log("nextPage", nextPage);
 
   const getResource = async (url) => {
     const res = await getApiResource(url);
