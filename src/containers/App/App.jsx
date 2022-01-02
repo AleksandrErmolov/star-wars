@@ -1,15 +1,6 @@
-import {
-  BrowserRouter,
-  NavLink,
-  Route,
-  Routes,
-  Switch,
-} from "react-router-dom";
+import { BrowserRouter, Route, Routes, Router } from "react-router-dom";
 
-import HomePage from "../HomePage";
-import PeoplePage from "../PeoplePage/PeoplePage";
 import routesConfig from "../../routes/routesConfig";
-import NotFoundPage from "../NotFoundPage";
 
 import styles from "./App.module.css";
 import Header from "../../components/Header";
@@ -20,16 +11,18 @@ function App() {
       <BrowserRouter>
         <div className={styles.wrapper}>
           <Header />
-
           <Routes>
-            {routesConfig.map((route, index) => (
-              <Route
-                key={index}
-                path={route.path}
-                element={route.component}
-                exact={route.exact}
-              />
-            ))}
+            {routesConfig.map((route, index) => {
+
+              return (
+                <Route
+                  key={index}
+                  path={route.path}
+                  element={route.element}
+                  exact={route.exact}
+                />
+              );
+            })}
           </Routes>
         </div>
       </BrowserRouter>

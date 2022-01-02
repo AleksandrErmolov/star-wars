@@ -3,38 +3,35 @@ import HomePage from "../containers/HomePage";
 import NotFoundPage from "../containers/NotFoundPage";
 import PersonPage from "../containers/PersonPage/PersonPage";
 
-
-
-
 const routesConfig = [
   {
     path: "/",
     exact: true,
-    component: <HomePage />,
+    element: <HomePage />,
   },
 
   {
-    path: "/people",
-    exact: true,
-    component: <PeoplePage />,
+    path: "/people/",
+    exact: false,
+    element: <PeoplePage />,
   },
 
   {
     path: "/people/:id",
     exact: true,
-    component: <PersonPage />,
+    element: <PersonPage />,
   },
 
   {
     path: "/not-found",
     exact: true,
-    component: <NotFoundPage />,
+    element: <NotFoundPage />,
   },
 
   {
     path: "*",
     exact: false,
-    component: <NotFoundPage />,
+    element: <NotFoundPage />,
   },
 ];
 
