@@ -7,10 +7,11 @@
 
   --color-blue: #6a83fb;
   --color-violent: #ae72c2;
+  --color-red: #f75d83;
 
   --border-radius-small: 3px;
   --border-radius-medium: 5px;
-  --spasing-ultra-small:5px;
+  --spasing-ultra-small: 5px;
   --spacing-medium: 20px;
   --spacing-large: 30px;
   --spacing-small: 10px;
@@ -24,7 +25,7 @@
   --font-size-header: 26px;
   --font-size-subheader: 18px;
 
-  --margin-list:7px;
+  --margin-list: 7px;
 
   --text-shadow-yellow:
     0 0 2px var(--color-white),

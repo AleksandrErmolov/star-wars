@@ -2,22 +2,27 @@ import React from "react";
 import { getApiResource } from "../../utils/network";
 import { getPeopleImage } from "../../services/getPeopleData";
 import { API_PERSON } from "../../constants/api";
-import { useEffect, useState } from "react";
+import { useEffect, useState, Suspense } from "react";
 import { useParams } from "react-router-dom";
 
 import { withErrorApi } from "../../hoc-helpers/withErrorApi";
+
 import PersonInfo from "../../components/PersonPage/PersonInfo/PersonInfo";
 import PersonFoto from "../../components/PersonPage/PersonFoto/PersonFoto";
+import PersonaLinkBack from "../../components/PeoplePage/PersonaLinkBack/PersonalLinkBack";
 
 import styles from "./PersonPage.module.css";
-import PersonaLinkBack from "../../components/PeoplePage/PersonaLinkBack/PersonalLinkBack";
+import UILoading from "../../components/UI/UILoading/UILoading";
+
+const PersonFilm = React.lazy(() =>
+  import("../../components/PersonPage/PersonFilm/PersonFilm")
+);
 
 function PersonPage({ setErrorApi }) {
   const [personInfo, setPersonInfo] = useState(null);
   const [personName, setPersonName] = useState(null);
   const [personFoto, setPersonFoto] = useState(null);
-
-    
+  const [personFilms, setPersonFilms] = useState(null);
 
   const { id } = useParams();
 
@@ -25,7 +30,7 @@ function PersonPage({ setErrorApi }) {
     (async () => {
       const res = await getApiResource(`${API_PERSON}/${id}`);
 
-        if (res) {
+      if (res) {
         setPersonInfo([
           { title: "Height", data: res.height },
           { title: "Massa", data: res.mass },
@@ -37,6 +42,9 @@ function PersonPage({ setErrorApi }) {
         ]);
         setPersonName(res.name);
         setPersonFoto(getPeopleImage(id));
+
+        res.films.length && setPersonFilms(res.films);
+
         setErrorApi(false);
       } else {
         setErrorApi(true);
@@ -44,18 +52,25 @@ function PersonPage({ setErrorApi }) {
     })();
   }, []);
 
-    return (
-      <>
-            <PersonaLinkBack id={id}/>
-        <div className={styles.wrapper}>
-          <span className={styles.person__name}>{personName}</span>
-          <div className={styles.container}>
-            <PersonFoto personFoto={personFoto} personName={personName} />
-            {personInfo && <PersonInfo personInfo={personInfo} />}
-          </div>
+  return (
+    <>
+      <PersonaLinkBack id={id} />
+      <div className={styles.wrapper}>
+        <span className={styles.person__name}>{personName}</span>
+        <div className={styles.container}>
+          <PersonFoto personFoto={personFoto} personName={personName} />
+
+          {personInfo && <PersonInfo personInfo={personInfo} />}
+
+          {personFilms && (
+            <Suspense fallback={<UILoading />}>
+              <PersonFilm personFilms={personFilms} />
+            </Suspense>
+          )}
         </div>
-      </>
-    );
+      </div>
+    </>
+  );
 }
 
 export default withErrorApi(PersonPage);
