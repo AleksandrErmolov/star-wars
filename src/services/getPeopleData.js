@@ -37,16 +37,17 @@ export const getPeopleId = (url) => getId(url, SWAPI_PEOPLE);
 export const getPeopleImage = (id) =>
   `${URL_IMG_PERSON}/${id + GUIDE_IMG_EXTENSION}`;
 
-
-export const getPeoplePageId = url=> { 
-  const pos = url.lastIndexOf(SWAPI_PARAM_PAGE)
+export const getPeoplePageId = (url) => {
+  const pos = url.lastIndexOf(SWAPI_PARAM_PAGE);
   const id = url.slice(pos + SWAPI_PARAM_PAGE.length, url.length);
-  return Number(id)
-}
+  return Number(id);
+};
 
-export const makeConcurrentRequest = async (url) => { 
-   const res = await Promise.all(url.map(res => { 
-    return fetch(res).then(res => res.json())
-  }))
+export const makeConcurrentRequest = async (url) => {
+  const res = await Promise.all(
+    url.map((res) => {
+      return fetch(res).then((res) => res.json());
+    })
+  );
   return res;
-}
+};
