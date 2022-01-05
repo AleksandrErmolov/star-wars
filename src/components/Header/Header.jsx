@@ -1,6 +1,6 @@
 import React from 'react'
 import { NavLink } from 'react-router-dom';
-
+import Favorite from '../Favorite/Favorite'
 
 import styles from "./Header.module.css";
 
@@ -13,6 +13,8 @@ export default function Header() {
         <li> <NavLink to="/people/?page=1"> People </NavLink> </li>
         <li> <NavLink to="/not-found"> Not Found  </NavLink> </li>
       </ul>
+      <Favorite />
+
       
      
     </div>

@@ -6,10 +6,7 @@ import styles from "./PersonaLinkBack.module.css";
 
 export default function PersonaLinkBack() {
 
-  
-
-    const navigate = useNavigate();
-      console.log( useNavigate());
+  const navigate = useNavigate();
 
   const handleGoBack = (e) => {
     e.preventDefault();
