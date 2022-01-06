@@ -13,3 +13,11 @@
     -webkit-text-fill-color:transparent;
 
 }
+
+.video {
+    display: block;
+    margin: 0 auto;
+    margin-top: var(--spacing-large);
+    border-radius: var(--border-radius-medium);
+    box-shadow: var(--boxshadow-white);
+}
