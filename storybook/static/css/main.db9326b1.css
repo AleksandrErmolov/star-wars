@@ -1,0 +1,120 @@
+.UILoading_loader__lGn3c {
+    width: 120px;
+    height: 120px;
+}
+
+.UILoading_shadow__cYJsX {
+    -webkit-filter: drop-shadow(0 0 2px #fff);
+            filter: drop-shadow(0 0 2px #fff);
+}
+.UIVideo_video__4jsdk {
+    
+}
+:root {
+    --color-white: #fff;
+    --color-lightgray: #dfe2df;
+    --color-gray: #9c9c9c;
+    --color-blue: #6a83fb;
+    --color-black: #000;
+
+    --font-size-small: 14px;
+    --font-size-medium: 16px;
+
+    --font-bold: 600;
+    --font-family-main: sans-serif;
+    --transition: .4s;
+}
+
+*, *:after, *:before {
+    box-sizing: border-box;
+}
+
+img {
+    display: block;
+}
+.UiButton_button__guAXI {
+    min-width: 100px;
+    padding: 10px 20px;
+    font-size: var(--font-size-small);
+    margin: 5px;
+    font-family: var(--font-famaily-main);
+    font-weight: var(--font-bold);
+    border-radius: 3px;
+    background: none;
+    outline: none;
+    transition: var(--transition);
+    cursor: pointer;
+}
+
+.UiButton_button__guAXI:disabled,
+.UiButton_button__guAXI:disabled:hover {
+    color: var(--color-gray);
+    border-color: var(--color-gray);
+    cursor: auto;
+    background-color: transparent;
+}
+
+.UiButton_dark__rNUHs {
+    border: 1px solid var(--color-white);
+    color: var(--color-white);
+}
+
+.UiButton_dark__rNUHs:hover {
+    color: var(--color-black);
+    background-color: var(--color-white);
+}
+
+.UiButton_light__hwwmD {
+    border: 1px solid var(--color-black);
+    color: var(--color-black);
+}
+
+.UiButton_light__hwwmD:hover {
+    color: var(--color-white);
+    background-color: var(--color-black);
+}
+.UiInput_wrapper__input__4Qm0s {
+    --border-radius: 3px;
+    --border: 3px;
+    --clear-width: 35px;
+}
+
+.UiInput_wrapper__input__4Qm0s {
+    position: relative;
+    display: inline-flex;
+}
+.UiInput_input__HgMmJ {
+    min-width: 300px;
+    padding: 10px 15px;
+    padding-right: calc(var(--clear-width) + 15px);
+    border: var(--border) solid;
+    border-color: var(--color-lightgray);
+    border-radius: var(--border-radius);
+    font-size: var(--font-size-medium);
+    font-family: var(--font-family-main);
+    outline: none;
+}
+.UiInput_input__HgMmJ:focus {
+    border-color: var(--color-blue);
+}
+.UiInput_clear__\+yALl {
+    position: absolute;
+    top: var(--border);
+    right: var(--border);
+    width: var(--clear-width);
+    height: calc(100% - var(--border)*2);
+    padding: 10px;
+    border: none;
+    outline: none;
+    object-fit: contain;
+    object-position: center center;
+    transition: .5s;
+    opacity: .4;
+    cursor: pointer;
+}
+.UiInput_clear__disabled__qAYbw {
+    opacity: .2;
+}
+
+
+/*# sourceMappingURL=main.db9326b1.css.map*/
