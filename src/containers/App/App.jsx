@@ -8,12 +8,11 @@ import Header from "../../components/Header";
 function App() {
   return (
     <div>
-      <BrowserRouter>
+      <BrowserRouter  basename={`/star-wars/`}>
         <div className={styles.wrapper}>
           <Header />
           <Routes>
             {routesConfig.map((route, index) => {
-
               return (
                 <Route
                   key={index}
