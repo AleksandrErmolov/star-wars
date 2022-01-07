@@ -39,7 +39,10 @@ export default function Header() {
 
   return (
     <div className={styles.conteiner}>
-      <img className={styles.logo} src={icon} alt="Logo" />
+      <NavLink to="/">
+        {" "}
+        <img className={styles.logo} src={icon} alt="Logo" />
+      </NavLink>
 
       <ul className={styles.list__container}>
         <li>
@@ -47,6 +50,9 @@ export default function Header() {
         </li>
         <li>
           <NavLink to="/people/?page=1"> People </NavLink>
+        </li>
+        <li>
+          <NavLink to="/search"> Search </NavLink>
         </li>
         <li>
           <NavLink to="/not-found"> Not Found </NavLink>
